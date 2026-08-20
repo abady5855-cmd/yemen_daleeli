@@ -24,6 +24,12 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: Check Flutter Environment
+        run: |
+          flutter --version
+          flutter doctor -v
+          java -version
+
       - name: Create Firebase Config File
         env:
           FIREBASE_SECRET: ${{ secrets.FIREBASE_CONFIG_JSON }}
